@@ -786,6 +786,87 @@
             margin-top: 5px;
         }
 
+        /* Enhanced Schedule Layout */
+        .schedule-days {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .schedule-day {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        .schedule-day:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .day-header {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .day-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .day-shows {
+            padding: 20px;
+        }
+
+        .show-item {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .show-item:last-child {
+            border-bottom: none;
+        }
+
+        .show-time {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .show-time i {
+            font-size: 0.9rem;
+        }
+
+        .show-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .show-host {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
         /* Video Section */
         .videos {
             background: var(--glass);
@@ -1629,6 +1710,10 @@
             .about-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .schedule-days {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1990,10 +2075,331 @@ amicable and reliable source of information dissemination.</p>
                 <button class="filter-btn" data-day="sunday">Sunday</button>
             </div>
             
-            <div class="schedule-container">
-                <table class="schedule-table" id="schedule-table">
-                    <!-- Schedule will be loaded here -->
-                </table>
+            <!-- Enhanced Schedule Layout -->
+            <div class="schedule-days">
+                <!-- Monday -->
+                <div class="schedule-day" data-day="monday">
+                    <div class="day-header">Monday</div>
+                    <div class="day-shows">
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 05h00-06h30</div>
+                            <div class="show-name">Qalanathi Jehovah</div>
+                            <div class="show-host">SA Bezengile</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 06h30-09h00</div>
+                            <div class="show-name">Asiye Breakfast Show</div>
+                            <div class="show-host">Isa Ngubo, MJ</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 09h00-12h00</div>
+                            <div class="show-name">Sesfikile Mid Morning Show</div>
+                            <div class="show-host">Sesethu Nocanda</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 12h00-15h00</div>
+                            <div class="show-name">Ziyakhipha Mid Day Show</div>
+                            <div class="show-host">Zoey Dlomo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 15h00-18h00</div>
+                            <div class="show-name">Askhambe Exclusive Drive</div>
+                            <div class="show-host">MziXobho, Sisipho Ndobe, Mthume Othumekayo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 18h20-19h00</div>
+                            <div class="show-name">Asbhobhe Sport Show</div>
+                            <div class="show-host">Thando Chiya</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 19h00-20h00</div>
+                            <div class="show-name">Asbhobhe Talk Show</div>
+                            <div class="show-host">Nokwanda Dladla</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 20h30-22h30</div>
+                            <div class="show-name">Ezolimo</div>
+                            <div class="show-host">Bhongo, Mthume Othumekayo</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tuesday -->
+                <div class="schedule-day" data-day="tuesday">
+                    <div class="day-header">Tuesday</div>
+                    <div class="day-shows">
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 05h00-06h30</div>
+                            <div class="show-name">Qalanathi Jehovah</div>
+                            <div class="show-host">SA Bezengile</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 06h30-09h00</div>
+                            <div class="show-name">Asiye Breakfast Show</div>
+                            <div class="show-host">Isa Ngubo, MJ</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 09h00-12h00</div>
+                            <div class="show-name">Sesfikile Mid Morning Show</div>
+                            <div class="show-host">Sesethu Nocanda</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 12h00-15h00</div>
+                            <div class="show-name">Ziyakhipha Mid Day Show</div>
+                            <div class="show-host">Zoey Dlomo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 15h00-18h00</div>
+                            <div class="show-name">Askhambe Exclusive Drive</div>
+                            <div class="show-host">MziXobho, Sisipho Ndobe</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 18h20-19h00</div>
+                            <div class="show-name">Asbhobhe Sport Show</div>
+                            <div class="show-host">Thando Chiya</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 19h00-20h00</div>
+                            <div class="show-name">Asbhobhe Talk Show</div>
+                            <div class="show-host">Nokwanda Dladla</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 20h30-22h30</div>
+                            <div class="show-name">Masakhane Talk Show</div>
+                            <div class="show-host">Siyanda Mgcwaba, Sinethemba "Pastor" Ndondo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 22h30-01h00</div>
+                            <div class="show-name">Deda Buthongo Sigiye</div>
+                            <div class="show-host">Sqhamo</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wednesday -->
+                <div class="schedule-day" data-day="wednesday">
+                    <div class="day-header">Wednesday</div>
+                    <div class="day-shows">
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 05h00-06h30</div>
+                            <div class="show-name">Qalanathi Jehovah</div>
+                            <div class="show-host">SA Bezengile</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 06h30-09h00</div>
+                            <div class="show-name">Asiye Breakfast Show</div>
+                            <div class="show-host">Isa Ngubo, MJ</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 09h00-12h00</div>
+                            <div class="show-name">Sesfikile Mid Morning Show</div>
+                            <div class="show-host">Sesethu Nocanda</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 12h00-15h00</div>
+                            <div class="show-name">Ziyakhipha Mid Day Show</div>
+                            <div class="show-host">Zoey Dlomo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 15h00-18h00</div>
+                            <div class="show-name">Askhambe Exclusive Drive</div>
+                            <div class="show-host">MziXobho, Sisipho Ndobe, Mthume Othumekayo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 18h20-19h00</div>
+                            <div class="show-name">Asbhobhe Sport Show</div>
+                            <div class="show-host">Thando Chiya</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 19h00-20h00</div>
+                            <div class="show-name">Asbhobhe Talk Show</div>
+                            <div class="show-host">Nokwanda Dladla</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 20h30-22h00</div>
+                            <div class="show-name">Ngicel'uxolo</div>
+                            <div class="show-host">Evangelist Radebe, Thembi Tshazi</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 22h00-00h00</div>
+                            <div class="show-name">Askhulume Sbonisane</div>
+                            <div class="show-host">Lindelwa Mzizi</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Thursday -->
+                <div class="schedule-day" data-day="thursday">
+                    <div class="day-header">Thursday</div>
+                    <div class="day-shows">
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 05h00-06h30</div>
+                            <div class="show-name">Qalanathi Jehovah</div>
+                            <div class="show-host">SA Bezengile</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 06h30-09h00</div>
+                            <div class="show-name">Asiye Breakfast Show</div>
+                            <div class="show-host">Isa Ngubo, MJ</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 09h00-12h00</div>
+                            <div class="show-name">Sizoliqengqelwa Ngubani Ilitye</div>
+                            <div class="show-host">Mam Magojo, Mam Bhungane</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 12h00-15h00</div>
+                            <div class="show-name">Ziyakhipha Mid Day Show</div>
+                            <div class="show-host">Zoey Dlomo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 15h00-18h00</div>
+                            <div class="show-name">Askhambe Exclusive Drive</div>
+                            <div class="show-host">MziXobho, Sisipho Ndobe, Mthume Othumekayo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 18h20-19h00</div>
+                            <div class="show-name">Asbhobhe Sport Show</div>
+                            <div class="show-host">Thando Chiya</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 19h00-20h00</div>
+                            <div class="show-name">Asbhobhe Talk Show</div>
+                            <div class="show-host">Nokwanda Dladla</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 21h00-23h00</div>
+                            <div class="show-name">Inkumbulo</div>
+                            <div class="show-host">Dlabs da dj</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Friday -->
+                <div class="schedule-day" data-day="friday">
+                    <div class="day-header">Friday</div>
+                    <div class="day-shows">
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 05h00-06h30</div>
+                            <div class="show-name">Qalanathi Jehovah</div>
+                            <div class="show-host">SA Bezengile</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 06h30-09h00</div>
+                            <div class="show-name">Asiye Breakfast Show</div>
+                            <div class="show-host">Isa Ngubo, MJ</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 09h00-12h00</div>
+                            <div class="show-name">Sesfikile Mid Morning Show</div>
+                            <div class="show-host">Sesethu Nocanda</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 12h00-15h00</div>
+                            <div class="show-name">Ziyakhipha Mid Day Show</div>
+                            <div class="show-host">Zoey Dlomo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 15h00-18h00</div>
+                            <div class="show-name">Askhambe Exclusive Drive</div>
+                            <div class="show-host">MziXobho, Sisipho Ndobe, Mthume Othumekayo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 18h00-20h00</div>
+                            <div class="show-name">Qina Mbokodo</div>
+                            <div class="show-host">Ndoni Thusi, Andiswa Mbambo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 20h00-00h00</div>
+                            <div class="show-name">Sgubhu Night Show</div>
+                            <div class="show-host">Alicia Okuhle, Andiswa Mbambo</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Saturday -->
+                <div class="schedule-day" data-day="saturday">
+                    <div class="day-header">Saturday</div>
+                    <div class="day-shows">
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 07h00-09h00</div>
+                            <div class="show-name">Isintu Sethu</div>
+                            <div class="show-host">Asekho Mjoli</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 09h00-12h00</div>
+                            <div class="show-name">Zidlekhaya</div>
+                            <div class="show-host">Dlabazane</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 12h00-15h00</div>
+                            <div class="show-name">Sigqashiya Ngengoma</div>
+                            <div class="show-host">Matenten</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 15h00-17h00</div>
+                            <div class="show-name">Siyadundubala Top 20</div>
+                            <div class="show-host">Sox, DJ Phaka</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 20h00-21h00</div>
+                            <div class="show-name">Kasi Ark Hip Hop Show</div>
+                            <div class="show-host">Big Boy</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 21h00-05h30</div>
+                            <div class="show-name">Siyadilika Party Time</div>
+                            <div class="show-host">DJ Phaka</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sunday -->
+                <div class="schedule-day" data-day="sunday">
+                    <div class="day-header">Sunday</div>
+                    <div class="day-shows">
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 05h30-07h30</div>
+                            <div class="show-name">Yizwa Udaba Lwami</div>
+                            <div class="show-host">Mr Classic</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 08h00-10h00</div>
+                            <div class="show-name">Khula Mntwana</div>
+                            <div class="show-host">Zuzeka Nomvalo</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 10h00-12h00</div>
+                            <div class="show-name">Thina Sobabini</div>
+                            <div class="show-host">Bhongo, DJ Khabs</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 12h00-14h30</div>
+                            <div class="show-name">Deep Easy Sunday</div>
+                            <div class="show-host">Pearlz</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 14h30-16h30</div>
+                            <div class="show-name">Jazz Jazz Session</div>
+                            <div class="show-host">DJ Khabs</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 16h30-18h30</div>
+                            <div class="show-name">Zidlangamabala</div>
+                            <div class="show-host">Mr Classic</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 19h00-21h00</div>
+                            <div class="show-name">Khwelemthini</div>
+                            <div class="show-host">SA Bezengile, Evangelist Radebe, Mphumzi Chiya</div>
+                        </div>
+                        <div class="show-item">
+                            <div class="show-time"><i class="far fa-clock"></i> 21h00-00h00</div>
+                            <div class="show-name">Ebenezer</div>
+                            <div class="show-host">Sinethemba "Pastor" Ndondo</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
